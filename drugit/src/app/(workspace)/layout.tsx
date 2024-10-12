@@ -1,5 +1,6 @@
-import SideNav from '@/app/(workspace)/ui/sidenav';
- 
+import SideNav from "@/app/(workspace)/ui/sidenav";
+import { ScrollArea } from "@/components/ui/scroll-area";
+
 export const experimental_ppr = true;
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -8,7 +9,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="w-full flex-none md:w-64">
         <SideNav />
       </div>
-      <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+      <div className="flex-grow p-6 md:overflow-y-auto md:p-12">
+        <ScrollArea>{children}</ScrollArea>
+      </div>
     </div>
   );
 }
