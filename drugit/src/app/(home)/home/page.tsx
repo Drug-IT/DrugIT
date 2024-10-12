@@ -9,7 +9,6 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import type { NextPage } from "next";
 import * as React from "react";
 
 import { Faq } from "@/components/faq";
@@ -39,7 +38,7 @@ import faq from "@/data/faq";
 import pricing from "@/data/pricing";
 import testimonials from "@/data/testimonials";
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <Box>
       <SEO title="DrugIT" description="Unlocking the power of molecules" />
@@ -56,7 +55,7 @@ const Home: NextPage = () => {
       </Box>
     </Box>
   );
-};
+}
 
 const HeroSection: React.FC = () => {
   return (
@@ -261,5 +260,3 @@ const PricingSection = () => {
 const FaqSection = () => {
   return <Faq {...faq} />;
 };
-
-export default Home;

@@ -1,24 +1,8 @@
 "use client";
 // app/layout.tsx
-import { Layout } from "@/components/layout";
-import { ColorModeScript } from "@chakra-ui/react";
-import { AuthProvider } from "@saas-ui/auth";
-import { SaasProvider } from "@saas-ui/react";
 import localFont from "next/font/local";
 import { ReactNode } from "react";
-import "./globals.css"; // Add any global styles here.
-
-import { extendTheme } from "@chakra-ui/react";
-import { theme } from "@saas-ui/react";
-
-import components from "@/theme/components";
-import { fontSizes } from "@/theme/foundations/typography";
-
-interface RootLayoutProps {
-  children: ReactNode;
-  headerProps?: any; // Adjust types as necessary
-  footerProps?: any; // Adjust types as necessary
-}
+import "./globals.css";
 const NeueMontreal = localFont({
   src: [
     {
@@ -66,36 +50,14 @@ const NeueMontreal = localFont({
   variable: "--font-NeueMontreal",
 });
 
-export default function RootLayout({
-  children,
-  headerProps,
-  footerProps,
-}: RootLayoutProps) {
-  const customTheme = extendTheme(
-    {
-      config: {
-        initialColorMode: "dark",
-        useSystemColorMode: false,
-      },
-      fontSizes,
-      components,
-    },
-    theme
-  );
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={`${NeueMontreal.variable}`}>
-        <ColorModeScript
-          initialColorMode={customTheme.config.initialColorMode}
-        />
-        <SaasProvider theme={customTheme}>
-          <AuthProvider>
-            <Layout headerProps={headerProps} footerProps={footerProps}>
-              {children}
-            </Layout>
-          </AuthProvider>
-        </SaasProvider>
-      </body>
+      <body className={`${NeueMontreal.variable}`}>{children}</body>
     </html>
   );
 }
