@@ -85,7 +85,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${NeueMontreal.variable}`}>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <ColorModeScript
+          initialColorMode={customTheme.config.initialColorMode}
+        />
         <SaasProvider theme={customTheme}>
           <AuthProvider>
             <Layout headerProps={headerProps} footerProps={footerProps}>

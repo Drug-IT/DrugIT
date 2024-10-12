@@ -1,93 +1,90 @@
-import { Button } from '@chakra-ui/react'
-import { Link } from '@saas-ui/react'
-import { NextSeoProps } from 'next-seo'
-import { FaGithub, FaTwitter } from 'react-icons/fa'
-import { FiCheck } from 'react-icons/fi'
-import { Logo } from './logo'
+import { NextSeoProps } from "next-seo";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FiCheck } from "react-icons/fi";
+import { Logo } from "./logo";
 
 const siteConfig = {
   logo: Logo,
   seo: {
-    title: 'Saas UI',
-    description: 'The React component library for startups',
+    title: "DrugIT",
+    description: "Unlocking the power of molecules",
   } as NextSeoProps,
-  termsUrl: '#',
-  privacyUrl: '#',
+  termsUrl: "#",
+  privacyUrl: "#",
   header: {
     links: [
       {
-        id: 'features',
-        label: 'Features',
+        id: "features",
+        label: "Features",
       },
       {
-        id: 'pricing',
-        label: 'Pricing',
+        id: "testimonials",
+        label: "Testimonials",
       },
       {
-        id: 'faq',
-        label: 'FAQ',
+        id: "pricing",
+        label: "Pricing",
       },
       {
-        label: 'Login',
-        href: '/login',
+        id: "faq",
+        label: "FAQ",
       },
       {
-        label: 'Sign Up',
-        href: '/signup',
-        variant: 'primary',
+        label: "Login",
+        href: "/login",
+      },
+      {
+        label: "Sign Up",
+        href: "/signup",
+        variant: "primary",
       },
     ],
   },
   footer: {
-    copyright: (
-      <>
-        Built by{' '}
-        <Link href="https://twitter.com/Pagebakers">Eelco Wiersma</Link>
-      </>
-    ),
     links: [
       {
-        href: 'mailto:hello@saas-ui.dev',
-        label: 'Contact',
+        href: "mailto:support@drugit.live",
+        label: "Contact",
       },
       {
-        href: 'https://twitter.com/saas_js',
-        label: <FaTwitter size="14" />,
+        href: "https://www.instagram.com/drugit.ai",
+        label: <FaInstagram size="14" />,
       },
       {
-        href: 'https://github.com/saas-js/saas-ui',
-        label: <FaGithub size="14" />,
+        href: "https://www.linkedin.com/company/drugit/",
+        label: <FaLinkedin size="14" />,
       },
     ],
   },
   signup: {
-    title: 'Start building with Saas UI',
+    title: "Begin Your Drug Discovery Journey",
     features: [
       {
         icon: FiCheck,
-        title: 'Accessible',
-        description: 'All components strictly follow WAI-ARIA standards.',
+        title: "User-Friendly",
+        description:
+          "Our platform is designed with intuitive navigation and clear workflows, making molecular analysis accessible to all researchers.",
       },
       {
         icon: FiCheck,
-        title: 'Themable',
+        title: "Customizable Workflows",
         description:
-          'Fully customize all components to your brand with theme support and style props.',
+          "Easily tailor the platform's features and interfaces to suit your specific research needs and preferences.",
       },
       {
         icon: FiCheck,
-        title: 'Composable',
+        title: "Integrative",
         description:
-          'Compose components to fit your needs and mix them together to create new ones.',
+          "Seamlessly integrate with existing research tools and databases to enhance your drug discovery processes.",
       },
       {
         icon: FiCheck,
-        title: 'Productive',
+        title: "Efficient",
         description:
-          'Designed to reduce boilerplate and fully typed, build your product at speed.',
+          "Optimized for speed and performance, DrugIT streamlines your research efforts, allowing for quicker analysis and decision-making.",
       },
     ],
   },
-}
+};
 
-export default siteConfig
+export default siteConfig;

@@ -1,40 +1,39 @@
 export default {
-  title: "Loved by tech people",
+  title: "Trusted by Industry Experts",
   items: [
     {
-      name: "Eelco Wiersma",
-      description: "Founder Saas UI",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1470742164024008706/k-eXHtu0_normal.jpg",
+      name: "Dr. Lisa Chen",
+      description: "Lead Research Scientist",
+      avatar: "https://example.com/avatar1.jpg",
       children: (
         <>
-          “With SaaS UI I am able to produce high quality dashboard apps and
-          internal tools without a lot of design skills. The ROI really is
-          amazing.”
+          “With DrugIT, we can analyze molecular structures and identify
+          potential drug candidates more efficiently than ever. The AI insights
+          have transformed our research process.”
         </>
       ),
     },
     {
-      name: "Caroline Yahaya",
-      description: "Fullstack Developer",
-      avatar: "/static/images/avatar2.jpg",
+      name: "Mark Johnson",
+      description: "Pharmaceutical Developer",
+      avatar: "https://example.com/avatar2.jpg",
       children: (
         <>
-          “Saas UI allows me to build beautiful and functional UI super fast.
-          The components are very well thought out and the Next.js starter kit
-          saved me at least 100 hours of work.”
+          “The molecular docking simulations provided by DrugIT have allowed us
+          to optimize our compounds with precision. This platform has
+          significantly shortened our development cycles.”
         </>
       ),
     },
     {
-      name: "Alberto Vazquez",
-      description: "Frontend Engineer",
-      avatar: "/static/images/avatar3.jpg",
+      name: "David Kim",
+      description: "Clinical Research Coordinator",
+      avatar: "https://example.com/avatar4.jpg",
       children: (
         <>
-          “Saas UI gave us a perfect starting point for our project, having the
-          storybooks already set up with beautifully crafted components and
-          fully mocked pages was a treat.”
+          “The integration of real-time insights and disease target
+          identification has made our trials much more focused and efficient.
+          DrugIT is an invaluable tool in our arsenal.”
         </>
       ),
     },

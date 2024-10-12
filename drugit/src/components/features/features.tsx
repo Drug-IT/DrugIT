@@ -12,6 +12,7 @@ import {
   useMultiStyleConfig,
   VStack,
 } from "@chakra-ui/react";
+import { Br } from "@saas-ui/react";
 import * as React from "react";
 
 import { Section, SectionTitle, SectionTitleProps } from "@/components/section";
@@ -69,6 +70,7 @@ export const Feature: React.FC<FeatureProps> = (props) => {
       )}
       <Box>
         <Heading sx={styles.title}>{title}</Heading>
+        <Br></Br>
         <Text sx={styles.description}>{description}</Text>
       </Box>
     </Stack>

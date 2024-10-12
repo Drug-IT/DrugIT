@@ -1,32 +1,50 @@
-import * as React from 'react'
-
 const faq = {
-  title: 'Frequently asked questions',
+  title: "Frequently asked questions",
   // description: '',
   items: [
     {
-      q: 'How many products can I use Saas UI Pro for?',
+      q: "What types of molecular analyses can DrugIT perform?",
       a: (
         <>
-          The single license can be used for one commercial application or SaaS
-          product and unlimited internal tools. You can buy as many licenses as
-          you need. <br /> The unlimited license does not have any restrictions.
+          DrugIT offers a range of molecular analysis features, including
+          structure optimization, ADME predictions, and molecular docking
+          simulations, to help researchers evaluate potential drug candidates
+          effectively.
         </>
       ),
     },
     {
-      q: 'Can I use Saas UI Pro for client work?',
-      a: "Yes, that's totally up to you, as long as it fits the license you purchase.",
+      q: "How does the chatbot support work?",
+      a: (
+        <>
+          Our intelligent chatbot is available 24/7 to assist users with
+          real-time queries about the platform, provide guidance on molecular
+          analysis, and help troubleshoot any issues you may encounter.
+        </>
+      ),
     },
     {
-      q: 'Can I use Saas UI Pro for Open Source projects?',
-      a: 'No currently not. A large part of Saas UI is already released under MIT license. We try to give back to the community as much as possible.',
+      q: "Can I integrate DrugIT with my existing research tools?",
+      a: (
+        <>
+          Yes! DrugIT is designed for seamless integration with various research
+          tools and databases, ensuring a smooth workflow for your drug
+          discovery projects.
+        </>
+      ),
     },
     {
-      q: 'Does Saas UI include Figma, Sketch or other design files?',
-      a: 'No, Saas UI does not include any design assets. Maintaining design resources costs a lot of extra effort. We believe small teams can move much faster by designing directly in code, with help of Storybooks.',
+      q: "What are the benefits of the different subscription plans?",
+      a: (
+        <>
+          Each subscription plan is tailored to meet specific research needs.
+          The Basic Plan offers essential tools for early-stage researchers,
+          while the Standard and Enterprise Plans provide advanced features and
+          support for teams and organizations with more complex requirements.
+        </>
+      ),
     },
   ],
-}
+};
 
-export default faq
+export default faq;

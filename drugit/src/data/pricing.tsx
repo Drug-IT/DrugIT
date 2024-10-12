@@ -1,114 +1,104 @@
-import { HStack, Text } from '@chakra-ui/react'
+import { HStack, Text } from "@chakra-ui/react";
 
 export default {
-  title: 'Pricing for every stage',
+  title: "Pricing for Every Stage",
   description:
-    'Pay once and get life-time access to our high quality components.',
+    "Choose a subscription plan that fits your research needs and gain access to our powerful features for molecular analysis and drug discovery.",
   plans: [
     {
-      id: 'oss',
-      title: 'Open Source',
-      description: 'Basic compoents, perfect to get started.',
-      price: 'Free',
+      id: "basic",
+      title: "Basic Plan",
+      description: "Essential features for early-stage researchers.",
+      price: "Free",
       features: [
         {
-          title: 'MIT License',
+          title: "Molecular Analysis Tools",
         },
         {
-          title: 'Authentication (Clerk/Supabase/Magic)',
+          title: "Basic ADME Predictions",
         },
         {
-          title: 'Form (react-hook-form)',
+          title: "Access to Community Forums",
         },
         {
-          title: 'Modals manager',
+          title: "Chatbot Support",
         },
         {
-          title: 'Hotkeys',
+          title: "Documentation and Tutorials",
         },
         {
-          title: 'Web3 components',
-        },
-        {
-          title: 'And much more...',
+          title: "And much more...",
         },
       ],
       action: {
-        href: '#',
+        href: "#",
       },
     },
     {
-      id: 'bootstrap',
-      title: 'Bootstrap',
-      description: 'Complete frontend stack for bootstrappers and small teams.',
-      price: 'Free',
-      isRecommended: true,
-      features: [
-        {
-          title: 'One project',
-        },
-        {
-          title: 'One developer',
-        },
-        {
-          title: 'Advanced components',
-        },
-        {
-          title: 'Multiple themes',
-        },
-        {
-          title: 'Next.js and Electron boilerplates',
-        },
-        {
-          title: 'Private discord community',
-        },
-        {
-          title: '1 year of updates',
-        },
-        null,
-        {
-          title: 'Private beta access',
-          iconColor: 'green.500',
-        },
-      ],
-      action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Single%20license',
-      },
-    },
-    {
-      id: 'startup',
-      title: 'Startup',
-      description: 'Unlimited license for growing teams.',
+      id: "standard",
+      title: "Standard Plan",
+      description: "Comprehensive tools for small teams and startups.",
       price: (
         <HStack>
           <Text textDecoration="line-through" fontSize="sm" color="gray.400">
-            €999,-
+            €499,-
           </Text>
-          <Text>€499,-</Text>
+          <Text>€249,-</Text>
         </HStack>
       ),
       features: [
         {
-          title: 'Unlimited projects',
+          title: "Unlimited Molecular Docking Simulations",
         },
         {
-          title: 'Unlimited developers',
+          title: "Advanced ADME Value Predictions",
         },
         {
-          title: '1 year of updates',
+          title: "Collaboration Tools for Teams",
         },
         {
-          title: 'Everything from Bootstrap',
+          title: "Enhanced Data Visualization",
         },
-        null,
         {
-          title: 'Private beta access',
-          iconColor: 'green.500',
+          title: "1 Year of Software Updates",
+        },
+        {
+          title: "Private Support Channel",
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
+        href: "https://yourplatform.com/pricing/standard",
+      },
+    },
+    {
+      id: "enterprise",
+      title: "Enterprise Plan",
+      description: "Unlimited access for larger organizations.",
+      price: (
+        <HStack>
+          <Text fontSize="md">contact us for a custom plan</Text>
+        </HStack>
+      ),
+      features: [
+        {
+          title: "Unlimited Projects and Users",
+        },
+        {
+          title: "Custom API Access",
+        },
+        {
+          title: "Dedicated Account Manager",
+        },
+        {
+          title: "Advanced Predictive Modeling",
+        },
+        {
+          title: "Priority Support and Training",
+        },
+      ],
+      action: {
+        href: "https://yourplatform.com/pricing/enterprise",
       },
     },
   ],
-}
+};

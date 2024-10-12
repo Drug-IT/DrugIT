@@ -4,17 +4,10 @@ import {
   Box,
   ButtonGroup,
   Container,
-  Flex,
   Heading,
   HStack,
-  Icon,
-  IconButton,
   Stack,
-  Tag,
   Text,
-  useClipboard,
-  VStack,
-  Wrap,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import * as React from "react";
@@ -23,26 +16,17 @@ import { Faq } from "@/components/faq";
 import { Features } from "@/components/features";
 import { BackgroundGradient } from "@/components/gradients/background-gradient";
 import { Hero } from "@/components/hero";
-import { ChakraLogo, NextjsLogo } from "@/components/logos";
 import { FallInPlace } from "@/components/motion/fall-in-place";
 import { Pricing } from "@/components/pricing/pricing";
-import { Em } from "@/components/typography";
-import { Br, Link } from "@saas-ui/react";
+import { Br } from "@saas-ui/react";
 import Image from "next/image";
 import {
-  FiArrowRight,
   FiBox,
-  FiCheck,
   FiCode,
-  FiCopy,
   FiFlag,
-  FiGrid,
   FiLock,
   FiSearch,
-  FiSliders,
-  FiSmile,
   FiTerminal,
-  FiThumbsUp,
   FiToggleLeft,
   FiTrendingUp,
   FiUserPlus,
@@ -55,23 +39,12 @@ import faq from "@/data/faq";
 import pricing from "@/data/pricing";
 import testimonials from "@/data/testimonials";
 
-import {
-  Highlights,
-  HighlightsItem,
-  HighlightsTestimonialItem,
-} from "@/components/highlights";
-
 const Home: NextPage = () => {
   return (
     <Box>
-      <SEO
-        title="Saas UI Landingspage"
-        description="Free SaaS landingspage starter kit"
-      />
+      <SEO title="DrugIT" description="Unlocking the power of molecules" />
       <Box>
         <HeroSection />
-
-        <HighlightsSection />
 
         <FeaturesSection />
 
@@ -96,48 +69,27 @@ const HeroSection: React.FC = () => {
             justifyContent="flex-start"
             px="0"
             title={
-              <FallInPlace>
-                Build beautiful
-                <Br /> software faster
+              <FallInPlace fontWeight="bold">
+                Unlocking the power of molecules
               </FallInPlace>
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{" "}
-                build intuitive SaaS products with speed.
+                we revolutionize drug discovery through the power of advanced AI
+                and data-driven insights.
+                <Br></Br>From identifying promising drug candidates to
+                predicting their efficacy in clinical trials.
               </FallInPlace>
             }
           >
             <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
+              <HStack pt="8" pb="12" spacing="8">
+                <ButtonGroup spacing={4} alignItems="center">
+                  <ButtonLink colorScheme="primary" size="lg" href="/signup">
+                    Sign Up
+                  </ButtonLink>
+                </ButtonGroup>
               </HStack>
-
-              <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
-                  Sign Up
-                </ButtonLink>
-                <ButtonLink
-                  size="lg"
-                  href="https://demo.saas-ui.dev"
-                  variant="outline"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: "common",
-                        transitionDuration: "normal",
-                        ".chakra-button:hover &": {
-                          transform: "translate(5px)",
-                        },
-                      }}
-                    />
-                  }
-                >
-                  View demo
-                </ButtonLink>
-              </ButtonGroup>
             </FallInPlace>
           </Hero>
           <Box
@@ -153,7 +105,6 @@ const HeroSection: React.FC = () => {
               <Box overflow="hidden" height="100%">
                 <Image
                   src="/static/screenshots/list.png"
-                  layout="fixed"
                   width={1200}
                   height={762}
                   alt="Screenshot of a ListPage in Saas UI Pro"
@@ -165,155 +116,7 @@ const HeroSection: React.FC = () => {
           </Box>
         </Stack>
       </Container>
-
-      <Features
-        id="benefits"
-        columns={[1, 2, 4]}
-        iconSize={4}
-        innerWidth="container.xl"
-        pt="20"
-        features={[
-          {
-            title: "Accessible",
-            icon: FiSmile,
-            description: "All components strictly follow WAI-ARIA standards.",
-            iconPosition: "left",
-            delay: 0.6,
-          },
-          {
-            title: "Themable",
-            icon: FiSliders,
-            description:
-              "Fully customize all components to your brand with theme support and style props.",
-            iconPosition: "left",
-            delay: 0.8,
-          },
-          {
-            title: "Composable",
-            icon: FiGrid,
-            description:
-              "Compose components to fit your needs and mix them together to create new ones.",
-            iconPosition: "left",
-            delay: 1,
-          },
-          {
-            title: "Productive",
-            icon: FiThumbsUp,
-            description:
-              "Designed to reduce boilerplate and fully typed, build your product at speed.",
-            iconPosition: "left",
-            delay: 1.1,
-          },
-        ]}
-        reveal={FallInPlace}
-      />
     </Box>
-  );
-};
-
-const HighlightsSection = () => {
-  const { value, onCopy, hasCopied } = useClipboard("yarn add @saas-ui/react");
-
-  return (
-    <Highlights>
-      <HighlightsItem colSpan={[1, null, 2]} title="Core components">
-        <VStack alignItems="flex-start" spacing="8">
-          <Text color="muted" fontSize="xl">
-            Get started for free with <Em>30+ open source components</Em>.
-            Including authentication screens with Clerk, Supabase and Magic.
-            Fully functional forms with React Hook Form. Data tables with React
-            Table.
-          </Text>
-
-          <Flex
-            rounded="full"
-            borderWidth="1px"
-            flexDirection="row"
-            alignItems="center"
-            py="1"
-            ps="8"
-            pe="2"
-            bg="primary.900"
-            _dark={{ bg: "gray.900" }}
-          >
-            <Box>
-              <Text color="yellow.400" display="inline">
-                yarn add
-              </Text>{" "}
-              <Text color="cyan.300" display="inline">
-                @saas-ui/react
-              </Text>
-            </Box>
-            <IconButton
-              icon={hasCopied ? <FiCheck /> : <FiCopy />}
-              aria-label="Copy install command"
-              onClick={onCopy}
-              variant="ghost"
-              ms="4"
-              isRound
-              color="white"
-            />
-          </Flex>
-        </VStack>
-      </HighlightsItem>
-      <HighlightsItem title="Solid foundations">
-        <Text color="muted" fontSize="lg">
-          We don&apos;t like to re-invent the wheel, neither should you. We
-          selected the most productive and established tools in the scene and
-          build Saas UI on top of it.
-        </Text>
-      </HighlightsItem>
-      <HighlightsTestimonialItem
-        name="Renata Alink"
-        description="Founder"
-        avatar="/static/images/avatar.jpg"
-        gradient={["pink.200", "purple.500"]}
-      >
-        “Saas UI helped us set up a beautiful modern UI in no time. It saved us
-        hundreds of hours in development time and allowed us to focus on
-        business logic for our specific use-case from the start.”
-      </HighlightsTestimonialItem>
-      <HighlightsItem
-        colSpan={[1, null, 2]}
-        title="Start your next idea two steps ahead"
-      >
-        <Text color="muted" fontSize="lg">
-          We took care of all your basic frontend needs, so you can start
-          building functionality that makes your product unique.
-        </Text>
-        <Wrap mt="8">
-          {[
-            "authentication",
-            "navigation",
-            "crud",
-            "settings",
-            "multi-tenancy",
-            "layouts",
-            "billing",
-            "a11y testing",
-            "server-side rendering",
-            "documentation",
-            "onboarding",
-            "storybooks",
-            "theming",
-            "upselling",
-            "unit testing",
-            "feature flags",
-            "responsiveness",
-          ].map((value) => (
-            <Tag
-              key={value}
-              variant="subtle"
-              colorScheme="purple"
-              rounded="full"
-              px="3"
-            >
-              {value}
-            </Tag>
-          ))}
-        </Wrap>
-      </HighlightsItem>
-    </Highlights>
   );
 };
 
@@ -328,16 +131,13 @@ const FeaturesSection = () => {
           textAlign="left"
           as="p"
         >
-          Not your standard
-          <Br /> dashboard template.
+          Not Your Standard Drug Discovery Platform
         </Heading>
       }
       description={
         <>
-          Saas UI Pro includes everything you need to build modern frontends.
-          <Br />
-          Use it as a template for your next product or foundation for your
-          design system.
+          DrugIT includes everything you need to revolutionize the drug
+          discovery process.
         </>
       }
       align="left"
@@ -345,69 +145,68 @@ const FeaturesSection = () => {
       iconSize={4}
       features={[
         {
-          title: "Components.",
+          title: "AI-Powered Insights",
           icon: FiBox,
           description:
-            "All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.",
+            "Leverage advanced AI algorithms to analyze molecular structures and select promising drug targets with high efficacy predictions.",
           variant: "inline",
         },
         {
-          title: "Starterkits.",
-          icon: FiLock,
-          description:
-            "Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.",
-          variant: "inline",
-        },
-        {
-          title: "Documentation.",
-          icon: FiSearch,
-          description:
-            "Extensively documented, including storybooks, best practices, use-cases and examples.",
-          variant: "inline",
-        },
-        {
-          title: "Onboarding.",
-          icon: FiUserPlus,
-          description:
-            "Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.",
-          variant: "inline",
-        },
-        {
-          title: "Feature flags.",
-          icon: FiFlag,
-          description:
-            "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
-          variant: "inline",
-        },
-        {
-          title: "Upselling.",
+          title: "Disease Target Identification",
           icon: FiTrendingUp,
           description:
-            "@/components and hooks for upgrade flows designed to make upgrading inside your app frictionless.",
+            "Identify and prioritize disease targets based on molecular data, ensuring a focused approach to drug discovery.",
           variant: "inline",
         },
         {
-          title: "Themes.",
+          title: "Molecular Analysis",
+          icon: FiLock,
+          description:
+            "Perform comprehensive molecular analyses to evaluate potential drug candidates and optimize their structures for better performance.",
+          variant: "inline",
+        },
+        {
+          title: "Predictive Modeling for Drug Efficacy",
           icon: FiToggleLeft,
           description:
-            "Includes multiple themes with darkmode support, always have the perfect starting point for your next project.",
+            "Utilize predictive modeling to forecast drug efficacy in various diseases, allowing for informed decision-making in candidate selection.",
           variant: "inline",
         },
         {
-          title: "Generators.",
+          title: "Chatbot Assistance",
+          icon: FiFlag,
+          description:
+            "Engage with our intelligent chatbot for real-time assistance, guidance on molecular analysis, and answers to your research questions.",
+          variant: "inline",
+        },
+        {
+          title: "ADME Value Predictions",
+          icon: FiSearch,
+          description:
+            "Predict Absorption, Distribution, Metabolism, and Excretion (ADME) values to assess the pharmacokinetic properties of compounds.",
+          variant: "inline",
+        },
+        {
+          title: "Molecular Docking Simulations",
+          icon: FiUserPlus,
+          description:
+            "Utilize advanced molecular docking techniques to simulate interactions between drug candidates and their targets, optimizing binding affinity.",
+          variant: "inline",
+        },
+        {
+          title: "Interactive Visualization Tools",
           icon: FiTerminal,
           description:
-            "Extend your design system while maintaininig code quality and consistency with built-in generators.",
+            "Access intuitive visualization tools to explore molecular interactions and disease pathways, enhancing understanding and communication.",
           variant: "inline",
         },
         {
-          title: "Monorepo.",
+          title: "Clinical Trial Insights",
           icon: FiCode,
           description: (
             <>
-              All code is available as packages in a high-performance{" "}
-              <Link href="https://turborepo.com">Turborepo</Link>, you have full
-              control to modify and adjust it to your workflow.
+              Gain insights into clinical trial outcomes by analyzing molecular
+              data and predicting success rates for specific drug candidates.
             </>
           ),
           variant: "inline",
@@ -431,6 +230,7 @@ const TestimonialsSection = () => {
 
   return (
     <Testimonials
+      id="testimonials"
       title={testimonials.title}
       columns={[1, 2, 3]}
       innerWidth="container.xl"
