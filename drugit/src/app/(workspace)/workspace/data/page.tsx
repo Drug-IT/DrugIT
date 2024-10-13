@@ -1,3 +1,3 @@
 export default function page() {
-  return <div>Molecular Data</div>;
+  return <div>Molecule data</div>;
 }

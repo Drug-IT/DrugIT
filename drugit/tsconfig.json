@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/groq/route.js"
+    "src/app/api/groq/route.js",
   ],
   "exclude": [
     "node_modules"
