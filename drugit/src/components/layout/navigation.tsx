@@ -9,9 +9,9 @@ import { NavLink } from "@/components/nav-link";
 
 import { useScrollSpy } from "@/hooks/use-scrollspy";
 
-import { MobileNavButton, MobileNavContent } from "@/components/mobile-nav";
 import { useDisclosure, useUpdateEffect } from "@chakra-ui/react";
 
+import { MobileNavButton, MobileNavContent } from "../mobile-nav/mobile-nav";
 import ThemeToggle from "./theme-toggle";
 
 const Navigation: React.FC = () => {

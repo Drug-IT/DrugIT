@@ -53,11 +53,13 @@ const NeueMontreal = localFont({
 interface RootLayoutProps {
   children: ReactNode;
 }
+const className =
+  typeof NeueMontreal !== "undefined" ? NeueMontreal.variable : "";
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={`${NeueMontreal.variable}`}>{children}</body>
+      <body className={className}>{children}</body>
     </html>
   );
 }

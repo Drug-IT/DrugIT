@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout";
 import { ColorModeScript } from "@chakra-ui/react";
 import { AuthProvider } from "@saas-ui/auth";
 import { SaasProvider } from "@saas-ui/react";
+
 import { ReactNode } from "react";
 import "../globals.css"; // Add any global styles here.
 

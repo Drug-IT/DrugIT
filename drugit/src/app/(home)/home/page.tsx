@@ -1,5 +1,4 @@
 "use client";
-import { SEO } from "@/components/seo/seo";
 import {
   Box,
   ButtonGroup,
@@ -15,9 +14,7 @@ import { Faq } from "@/components/faq";
 import { Features } from "@/components/features";
 import { BackgroundGradient } from "@/components/gradients/background-gradient";
 import { Hero } from "@/components/hero";
-import { FallInPlace } from "@/components/motion/fall-in-place";
 import { Pricing } from "@/components/pricing/pricing";
-import { Br } from "@saas-ui/react";
 import Image from "next/image";
 import {
   FiBox,
@@ -41,7 +38,6 @@ import testimonials from "@/data/testimonials";
 export default function Home() {
   return (
     <Box>
-      <SEO title="DrugIT" description="Unlocking the power of molecules" />
       <Box>
         <HeroSection />
 
@@ -67,21 +63,33 @@ const HeroSection: React.FC = () => {
             id="home"
             justifyContent="flex-start"
             px="0"
-            title={
+            title="Unlocking the power of molecules"
+            /*{
               <FallInPlace fontWeight="bold">
                 Unlocking the power of molecules
               </FallInPlace>
-            }
-            description={
+            }*/
+            description="we revolutionize drug discovery through the power of advanced AI
+            and data-driven insights.
+            From identifying promising drug candidates to
+            predicting their efficacy in clinical trials."
+            /*{
               <FallInPlace delay={0.4} fontWeight="medium">
                 we revolutionize drug discovery through the power of advanced AI
                 and data-driven insights.
                 <Br></Br>From identifying promising drug candidates to
                 predicting their efficacy in clinical trials.
               </FallInPlace>
-            }
+            }*/
           >
-            <FallInPlace delay={0.8}>
+            <HStack pt="8" pb="12" spacing="8">
+              <ButtonGroup spacing={4} alignItems="center">
+                <ButtonLink colorScheme="primary" size="lg" href="/signup">
+                  Sign Up
+                </ButtonLink>
+              </ButtonGroup>
+            </HStack>
+            {/*<FallInPlace delay={0.8}>
               <HStack pt="8" pb="12" spacing="8">
                 <ButtonGroup spacing={4} alignItems="center">
                   <ButtonLink colorScheme="primary" size="lg" href="/signup">
@@ -89,7 +97,7 @@ const HeroSection: React.FC = () => {
                   </ButtonLink>
                 </ButtonGroup>
               </HStack>
-            </FallInPlace>
+          </FallInPlace>*/}
           </Hero>
           <Box
             height="600px"
@@ -100,7 +108,16 @@ const HeroSection: React.FC = () => {
             maxW="1100px"
             margin="0 auto"
           >
-            <FallInPlace delay={1}>
+            <Box overflow="hidden" height="100%">
+              <Image
+                src="/screenshot.png"
+                width={1200}
+                height={762}
+                alt="Screenshot of an analysis in DrugIT"
+                priority
+              />
+            </Box>
+            {/*<FallInPlace delay={1}>
               <Box overflow="hidden" height="100%">
                 <Image
                   src="/static/screenshots/list.png"
@@ -111,7 +128,7 @@ const HeroSection: React.FC = () => {
                   priority
                 />
               </Box>
-            </FallInPlace>
+        </FallInPlace>*/}
           </Box>
         </Stack>
       </Container>
