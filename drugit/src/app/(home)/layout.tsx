@@ -15,7 +15,7 @@ import { fontSizes } from "@/theme/foundations/typography";
 
 interface HomeLayoutProps {
   children: ReactNode;
-  footerProps?: any; // Adjust types as necessary
+  footerProps?: any;
 }
 
 export default function HomeLayout({ children, footerProps }: HomeLayoutProps) {
