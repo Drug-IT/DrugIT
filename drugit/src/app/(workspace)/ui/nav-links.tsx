@@ -15,12 +15,16 @@ const links = [
   { name: "Home", href: "/workspace", icon: HomeIcon },
   { name: "Molecular Analysis", href: "/workspace/analysis", icon: BeakerIcon },
   {
-    name: "Target Driven",
+    name: "Target Driven Analysis",
     href: "/workspace/target",
     icon: CursorArrowRaysIcon,
   },
-  { name: "Docking", href: "/workspace/docking", icon: CubeTransparentIcon },
-  { name: "Contact", href: "/workspace/contact", icon: UserGroupIcon },
+  {
+    name: "Molecular Docking",
+    href: "/workspace/docking",
+    icon: CubeTransparentIcon,
+  },
+  { name: "Contact us", href: "/workspace/contact", icon: UserGroupIcon },
 ];
 
 export default function NavLinks({ isCollapsed }: { isCollapsed: boolean }) {

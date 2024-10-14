@@ -48,6 +48,12 @@
     "remark-gfm": "^4.0.0",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.3",
+    "@radix-ui/react-checkbox": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-popover": "^1.1.2",
+    "@tabler/icons-react": "^3.19.0",
+    "cmdk": "^1.0.0",
+    "tabler": "^1.0.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

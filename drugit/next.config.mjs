@@ -9,6 +9,17 @@ const nextConfig = {
             },
         ]
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'pubchem.ncbi.nlm.nih.gov',
+                port: '',
+                pathname: '/rest/pug/compound/smiles/**',
+                search: '',
+            },
+        ],
+    },
 };
 
 export default nextConfig;
