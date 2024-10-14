@@ -1,3 +1,5 @@
-export default function page() {
-  return <div>Molecular Analysis Report</div>;
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/workspace/under-construction");
 }

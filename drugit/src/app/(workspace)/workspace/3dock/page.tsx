@@ -1,3 +1,5 @@
-export default function page() {
-  return <div>3D Docking</div>;
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/workspace/under-construction");
 }

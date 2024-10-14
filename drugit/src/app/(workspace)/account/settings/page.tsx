@@ -1,3 +1,5 @@
-export default function page() {
-  return <div>Settings</div>;
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/workspace/under-construction");
 }

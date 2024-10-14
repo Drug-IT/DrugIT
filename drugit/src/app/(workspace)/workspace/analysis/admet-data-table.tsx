@@ -8,11 +8,11 @@ import {
 } from "@/components/ui/table";
 import React from "react";
 
-interface RdkitDataTableProps {
+interface AdmetDataTableProps {
   data: Record<string, any>[]; // Array of objects with string keys and any values
 }
 
-const RdkitDataTable: React.FC<RdkitDataTableProps> = ({ data }) => {
+const AdmetDataTable: React.FC<AdmetDataTableProps> = ({ data }) => {
   if (!data || data.length === 0) {
     return <></>;
   }
@@ -27,16 +27,12 @@ const RdkitDataTable: React.FC<RdkitDataTableProps> = ({ data }) => {
           <TableHead>Value</TableHead>
           <TableHead>Descriptor</TableHead>
           <TableHead>Value</TableHead>
-          <TableHead>Descriptor</TableHead>
-          <TableHead>Value</TableHead>
-          <TableHead>Descriptor</TableHead>
-          <TableHead>Value</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {keys.map((key, index) => {
           // Create rows with four key-value pairs
-          if (index % 4 === 0) {
+          if (index % 2 === 0) {
             return (
               <TableRow key={key}>
                 <TableCell>{key}</TableCell>
@@ -51,18 +47,6 @@ const RdkitDataTable: React.FC<RdkitDataTableProps> = ({ data }) => {
                     ? data[0][keys[index + 1]].toFixed(4)
                     : data[0][keys[index + 1]] || ""}
                 </TableCell>
-                <TableCell>{keys[index + 2] || ""}</TableCell>
-                <TableCell className="font-bold">
-                  {typeof data[0][keys[index + 2]] === "number"
-                    ? data[0][keys[index + 2]].toFixed(4)
-                    : data[0][keys[index + 2]] || ""}
-                </TableCell>
-                <TableCell>{keys[index + 3] || ""}</TableCell>
-                <TableCell className="font-bold">
-                  {typeof data[0][keys[index + 3]] === "number"
-                    ? data[0][keys[index + 3]].toFixed(4)
-                    : data[0][keys[index + 3]] || ""}
-                </TableCell>
               </TableRow>
             );
           }
@@ -73,4 +57,4 @@ const RdkitDataTable: React.FC<RdkitDataTableProps> = ({ data }) => {
   );
 };
 
-export default RdkitDataTable;
+export default AdmetDataTable;

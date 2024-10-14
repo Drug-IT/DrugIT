@@ -1,3 +1,5 @@
-export default function page() {
-  return <div>Account Details</div>;
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/workspace/under-construction");
 }
