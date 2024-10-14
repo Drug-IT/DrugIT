@@ -115,6 +115,7 @@ const HeroSection: React.FC = () => {
                 height={762}
                 alt="Screenshot of an analysis in DrugIT"
                 priority
+                className="rounded-lg"
               />
             </Box>
             {/*<FallInPlace delay={1}>
