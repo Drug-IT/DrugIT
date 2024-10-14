@@ -15,15 +15,10 @@ import { fontSizes } from "@/theme/foundations/typography";
 
 interface HomeLayoutProps {
   children: ReactNode;
-  headerProps?: any; // Adjust types as necessary
   footerProps?: any; // Adjust types as necessary
 }
 
-export default function HomeLayout({
-  children,
-  headerProps,
-  footerProps,
-}: HomeLayoutProps) {
+export default function HomeLayout({ children, footerProps }: HomeLayoutProps) {
   const customTheme = extendTheme(
     {
       config: {
