@@ -8,7 +8,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import React from "react";
-TableRow;
 
 const TableSkeleton: React.FC<{ rows: number; columns: number }> = ({
   rows,

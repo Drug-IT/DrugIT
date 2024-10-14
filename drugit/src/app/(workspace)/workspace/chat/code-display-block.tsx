@@ -8,10 +8,9 @@ import { Button } from "./button";
 
 interface ButtonCodeblockProps {
   code: string;
-  lang: string;
 }
 
-export default function CodeDisplayBlock({ code, lang }: ButtonCodeblockProps) {
+export default function CodeDisplayBlock({ code }: ButtonCodeblockProps) {
   const [isCopied, setisCopied] = React.useState(false);
   const { theme } = useTheme();
 

@@ -24,18 +24,12 @@ export default function Page({ params }: { params: { name: string } }) {
   const [imgUrl, setImgUrl] = useState("");
   const [fetchError, setFetchError] = useState(false);
   const [moleculeData, setMoleculeData] = useState<MoleculeData>({});
-  const [rdkit, setRdkit] = useState<Record<string, any>[]>([]);
-  const apiKey = "ybsIuz-MOJQItJIAumUFqpdGGyE2YP-CsLC6nHleu69zAzFuJLKrag==";
-  const admetUrl =
-    "https://admetfunctionapp.azurewebsites.net/api/CalculateAdmet?";
-  const rdkitUrl =
-    "https://rdkitfunction1.azurewebsites.net/api/CalculateRdkit";
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     setFetchError(false);
-    let url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/${smiles.trim()}/description/JSON`;
-    let imgUrl = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/${smiles.trim()}/PNG`;
+    const url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/${smiles.trim()}/description/JSON`;
+    const imgUrl = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/${smiles.trim()}/PNG`;
     try {
       setIsLoading(true);
       fetch(url)
@@ -56,23 +50,6 @@ export default function Page({ params }: { params: { name: string } }) {
             setImgUrl(imgUrl);
           }
         });
-
-      fetch(rdkitUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Api-Key": "amiramir",
-        },
-        body: JSON.stringify({ smiles: smiles }),
-      })
-        .then((res) => res.text())
-        .then((text) => {
-          const jsonString = text
-            .replace(/np\.float64\(([^)]+)\)/g, "$1")
-            .replace(/'/g, '"');
-          const data = JSON.parse(jsonString);
-          setRdkit([data]);
-        });
     } catch (error) {
       console.error("Error:", error);
       setFetchError(true);
@@ -83,6 +60,7 @@ export default function Page({ params }: { params: { name: string } }) {
 
   return (
     <>
+      <div>{target}</div>
       <div className="m-2 p-2 flex items-center justify-between space-y-2">
         <div>
           <h2 className="text-2xl font-bold tracking-tight pb-6">

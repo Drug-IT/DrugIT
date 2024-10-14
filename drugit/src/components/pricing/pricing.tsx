@@ -81,7 +81,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
     </Section>
   );
 };
-
+/* eslint-disable  @typescript-eslint/no-empty-object-type */
 const PricingFeatures: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {

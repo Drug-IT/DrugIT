@@ -16,7 +16,7 @@ export interface SectionProps
 }
 
 export const Section: React.FC<SectionProps> = (props) => {
-  const { children, innerWidth = "container.lg", className, ...rest } = props;
+  const { children, innerWidth = "container.lg", ...rest } = props;
   const styles = useStyleConfig("Section", rest);
 
   const ownProps = omitThemingProps(rest);

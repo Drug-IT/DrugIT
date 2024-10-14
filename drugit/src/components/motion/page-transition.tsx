@@ -1,7 +1,6 @@
-import * as React from 'react'
-import { HTMLMotionProps } from 'framer-motion'
+import * as React from "react";
 
-import { MotionBox, MotionBoxProps } from './box'
+import { MotionBox, MotionBoxProps } from "./box";
 
 export const PageTransition: React.FC<MotionBoxProps> = (props) => (
   <MotionBox
@@ -9,4 +8,4 @@ export const PageTransition: React.FC<MotionBoxProps> = (props) => (
     animate={{ y: 0, opacity: 1 }}
     {...props}
   />
-)
+);

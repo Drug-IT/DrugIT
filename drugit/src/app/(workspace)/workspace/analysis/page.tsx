@@ -38,8 +38,8 @@ export default function Analysis() {
   const chiralityUrl = "https://rsfunction.azurewebsites.net/api/CalculateRS";
   const IsomerUrl =
     "https://zeisomerfunctionapp.azurewebsites.net/api/determinezeisomer";
-  const lungCancerUrl =
-    "https://modelredirect.azurewebsites.net/api/http_trigger1?";
+  /*const lungCancerUrl =
+    "https://modelredirect.azurewebsites.net/api/http_trigger1?";*/
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
