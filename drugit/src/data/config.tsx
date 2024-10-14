@@ -31,7 +31,7 @@ const siteConfig = {
       },
       {
         label: "Login",
-        href: "/login",
+        href: "/workspace",
       },
       {
         label: "Sign Up",
