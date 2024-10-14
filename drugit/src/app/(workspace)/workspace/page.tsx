@@ -118,7 +118,7 @@ export default function Home() {
                     } else {
                       return (
                         <pre className="whitespace-pre-wrap pt-2" key={index}>
-                          <CodeDisplayBlock code={part} lang="" />
+                          <CodeDisplayBlock code={part} />
                         </pre>
                       );
                     }
