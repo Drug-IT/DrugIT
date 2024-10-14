@@ -40,9 +40,7 @@ export default function HomeLayout({
       <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
       <SaasProvider theme={customTheme}>
         <AuthProvider>
-          <Layout headerProps={headerProps} footerProps={footerProps}>
-            {children}
-          </Layout>
+          <Layout footerProps={footerProps}>{children}</Layout>
         </AuthProvider>
       </SaasProvider>
     </>
